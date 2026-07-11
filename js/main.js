@@ -63,7 +63,7 @@
         if(out.success==='true'||out.success===true){msg.classList.add('ok');msg.textContent='Thank you! Our sourcing specialist will call you within 24 hours.';form.reset();
           if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'canton_fair'});
         }else{throw new Error();}
-      }catch(err){msg.classList.add('err');msg.textContent='Something went wrong. Please WhatsApp us at +91 83054 29482.';}
+      }catch(err){msg.classList.add('err');msg.textContent='Something went wrong. Please WhatsApp us at +91 7746 050190.';}
       btn.disabled=false;btn.textContent='Request my free consultation';
     });
   }
