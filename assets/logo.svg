@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 92" role="img" aria-label="Nexera Sourcing">
+  <text x="4" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="bold"><tspan fill="#1B2C8F">NEX</tspan><tspan fill="#0E8A78">ERA</tspan></text>
+  <g>
+    <ellipse cx="245" cy="34" rx="21" ry="10" fill="#E9A020"/>
+    <path d="M266 34 L288 20 L283 34 L288 48 Z" fill="#E9A020"/>
+    <path d="M242 24 Q248 12 259 20 Z" fill="#F0B84A"/>
+    <circle cx="234" cy="32" r="2.2" fill="#0B1E3E"/>
+  </g>
+  <text x="66" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="9" fill="#C0532A">SOURCING</text>
+</svg>
