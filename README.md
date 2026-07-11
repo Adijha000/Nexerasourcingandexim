@@ -19,12 +19,14 @@ No build step — pure HTML/CSS/JS. Deploy anywhere (Netlify, Vercel, Cloudflare
 
 ## ⚙️ 3 setup steps before going live
 
-### 1. Wire the inquiry form to email (nexerasourcing01@gmail.com)
-The form uses **Web3Forms** (free, no backend, emails you directly).
-1. Go to https://web3forms.com → enter `nexerasourcing01@gmail.com` → get your **Access Key**.
-2. In `index.html`, replace `YOUR_WEB3FORMS_ACCESS_KEY` with that key.
-> Until you add the key, the form falls back to opening the visitor's email app to nexerasourcing01@gmail.com (so it still works, just less smoothly). For best lead capture, add the key.
-Alternative: Formspree, Getform, or a Google Apps Script endpoint — swap the `fetch` URL in `js/main.js`.
+### 1. Inquiry form (already working, no account needed)
+The hero form, the homepage form and the auto popup all post to **FormSubmit.co**, which emails
+every inquiry to `nexerasourcing01@gmail.com` with no signup and no API key.
+The only one time step: the first submission triggers a FormSubmit activation email to that inbox.
+Open it and click the activation link once. After that, all inquiries arrive automatically.
+(An activation email has already been sent during setup.)
+To change the destination email, edit the endpoint in `js/main.js` and `js/popup.js`.
+See `DEPLOY.md` for the full go live guide.
 
 ### 2. Add Google Analytics 4 + Meta Pixel
 Paste before `</head>` in every page (or just index + templates):

@@ -51,23 +51,16 @@
     });
   });
 
-  // Lead form -> Web3Forms (emails nexerasourcing01@gmail.com)
+  // Lead form -> FormSubmit.co (emails nexerasourcing01@gmail.com, no account needed)
   var form=document.getElementById('leadForm'),msg=document.getElementById('formMsg'),btn=document.getElementById('submitBtn');
   if(form){
     form.addEventListener('submit',async function(e){
       e.preventDefault();
-      var key=form.querySelector('[name=access_key]').value;
-      msg.className='form-msg';btn.disabled=true;btn.textContent='Sending…';
-      // Fallback: if no Web3Forms key set yet, open email client
-      if(!key||key==='YOUR_WEB3FORMS_ACCESS_KEY'){
-        var d=new FormData(form),body='';d.forEach(function(v,k){if(['access_key','subject','from_name','botcheck'].indexOf(k)<0)body+=k+': '+v+'%0D%0A';});
-        window.location.href='mailto:nexerasourcing01@gmail.com?subject=Canton%20Fair%20Inquiry&body='+body;
-        btn.disabled=false;btn.textContent='Request my free consultation';return;
-      }
+      msg.className='form-msg';btn.disabled=true;btn.textContent='Sending...';
       try{
-        var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
+        var res=await fetch('https://formsubmit.co/ajax/nexerasourcing01@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
         var out=await res.json();
-        if(out.success){msg.classList.add('ok');msg.textContent='✅ Thank you! Our sourcing specialist will call you within 24 hours.';form.reset();
+        if(out.success==='true'||out.success===true){msg.classList.add('ok');msg.textContent='Thank you! Our sourcing specialist will call you within 24 hours.';form.reset();
           if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'canton_fair'});
         }else{throw new Error();}
       }catch(err){msg.classList.add('err');msg.textContent='Something went wrong. Please WhatsApp us at +91 83054 29482.';}
