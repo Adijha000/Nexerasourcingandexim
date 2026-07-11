@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Canton Fair 2026 Delegations by City — India | Nexera Sourcing</title>
-<meta name="description" content="Canton Fair 2026 business delegations from across India — Surat, Ahmedabad, Rajkot, Morbi, Delhi, Mumbai, Ludhiana, Jaipur, Bengaluru and more.">
+<title>Canton Fair 2026 Delegations by City in India | Nexera Sourcing</title>
+<meta name="description" content="Canton Fair 2026 business delegations from across India, including Surat, Ahmedabad, Rajkot, Morbi, Delhi, Mumbai, Ludhiana, Jaipur, Bengaluru and more.">
 <link rel="canonical" href="https://nexerasourcingandexim.com/locations/">
 <meta name="robots" content="index, follow">
 <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
@@ -15,14 +15,14 @@
 <body>
 <header id="header"><div class="container nav">
   <a href="../"><img src="../assets/logo.svg" alt="Nexera Sourcing & Exim"></a>
-  <nav class="nav-links" id="navLinks"><a href="../#why">Why Nexera</a><a href="../blog/">Blog</a><a href="../#apply" class="nav-cta">Book Free Call</a></nav>
+  <nav class="nav-links" id="navLinks"><a href="../#why">Why Nexera</a><a href="../blog/">Blog</a><a href="../#book" class="nav-cta">Book a Meeting</a></nav>
   <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </div></header>
 
 <section style="padding:140px 0 40px;background:var(--navy);color:#fff;text-align:center">
   <div class="container">
     <span class="eyebrow" style="color:var(--gold)">Delegations across India</span>
-    <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin-top:8px">Canton Fair 2026 — from your city</h1>
+    <h1 style="color:#fff;font-size:clamp(2rem,4vw,3rem);margin-top:8px">Canton Fair 2026 from your city</h1>
     <p style="color:#cdd9ec;max-width:640px;margin:14px auto 0">We support serious business owners, importers and manufacturers from India's biggest trade and manufacturing hubs.</p>
   </div>
 </section>
@@ -41,7 +41,7 @@ document.getElementById('ham').onclick=function(){document.getElementById('navLi
 window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',scrollY>40)});
 document.getElementById('header').classList.add('scrolled');
 var cities=[["Surat","Textiles, diamonds, machinery","canton-fair-tour-from-surat.html"],["Ahmedabad","Textiles, chemicals, pharma",""],["Rajkot","Engineering, auto parts, machine tools",""],["Morbi","Ceramics, tiles, sanitaryware",""],["Delhi NCR","Electronics, lighting, hardware, gifts",""],["Mumbai","Electronics, general imports",""],["Ludhiana","Hosiery, bicycle & auto parts, tools",""],["Jaipur","Gems, gifts, handicrafts",""],["Bengaluru","Electronics, machinery, startups",""],["Hyderabad","General trade, electronics",""],["Kolkata","Electronics, general imports",""],["Coimbatore","Textile machinery, motors, pumps",""]];
-var html='';cities.forEach(function(c){var live=c[2]!=='';html+='<a class="post-card" href="'+(live?c[2]:'../#apply')+'"><div class="body"><span class="tagpill">'+(live?'Available':'Enquire')+'</span><h3>Canton Fair from '+c[0]+'</h3><p>'+c[1]+'</p><span class="rd">'+(live?'View details →':'Book a call →')+'</span></div></a>';});
+var html='';cities.forEach(function(c){var live=c[2]!=='';html+='<a class="post-card" href="'+(live?c[2]:'../#book')+'"><div class="body"><span class="tagpill">'+(live?'Available':'Enquire')+'</span><h3>Canton Fair from '+c[0]+'</h3><p>'+c[1]+'</p><span class="rd">'+(live?'View details →':'Book a call →')+'</span></div></a>';});
 document.getElementById('cityList').innerHTML=html;
 </script>
 </body>
