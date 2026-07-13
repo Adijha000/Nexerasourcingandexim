@@ -67,4 +67,35 @@
       btn.disabled=false;btn.textContent='Request my free consultation';
     });
   }
+
+  // Scroll progress bar
+  var sb=document.getElementById('scrollbar');
+  if(sb){window.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;sb.style.width=p+'%';});}
+
+  // Countdown to early-bird deadline (15 Aug 2026, IST)
+  var deadline=new Date('2026-08-15T23:59:59+05:30').getTime();
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var el=document.getElementById('cdD'); if(!el)return;
+    var diff=deadline-Date.now();
+    if(diff<0){document.getElementById('cdTimer').innerHTML='<div class="cd-box" style="min-width:auto;padding:10px 18px"><b style="font-size:1.1rem">Booking open</b></div>';return;}
+    var d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+    el.textContent=pad(d);document.getElementById('cdH').textContent=pad(h);document.getElementById('cdM').textContent=pad(m);document.getElementById('cdS').textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+
+  // Animated counters
+  function animateCount(elm){
+    var to=+elm.getAttribute('data-to'),suf=elm.getAttribute('data-suffix')||'',start=0,dur=1600,t0=null;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);var val=Math.floor((1-Math.pow(1-p,3))*to);elm.textContent=val.toLocaleString('en-IN')+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target);cio.unobserve(e.target);}});},{threshold:.5});
+  document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
+
+  // Subtle 3D tilt on hover
+  document.querySelectorAll('.tilt').forEach(function(el){
+    el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(600px) rotateX('+(-y*8)+'deg) rotateY('+(x*8)+'deg) translateY(-6px)';});
+    el.addEventListener('mouseleave',function(){el.style.transform='';});
+  });
 })();

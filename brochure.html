@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexera Sourcing — 140th Canton Fair 2026 Brochure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1E3E; --navy2:#13315F; --blue:#1B2C8F; --teal:#0E8A78; --orange:#C0532A;
+  --gold:#C8912B; --goldl:#E9B24A; --koi:#E9A020; --red:#C1272D; --pink:#B83280;
+  --ink:#16233C; --muted:#5A6B85; --line:#E4EAF3; --light:#F4F7FC; --cream:#FBF7EF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#54617a;font-family:'Inter',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;min-height:297mm;background:#fff;margin:14px auto;position:relative;display:flex;flex-direction:column;overflow:hidden}
+.serif{font-family:'Playfair Display',serif}
+.pad{padding:12mm 13mm 9mm}
+.grow{flex:1}
+.pad.grow{display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.itin-list li{font-size:10.5px;padding:1.5px 0 1.5px 15px;line-height:1.35}
+.itin-list li::before{top:6px}
+/* header */
+.hd{display:flex;justify-content:space-between;align-items:flex-start;padding:9mm 12mm 4mm}
+.hd .lg img{height:40px;display:block}
+.hd .tag{font-size:7px;font-weight:700;letter-spacing:.16em;color:var(--muted);margin-top:3px}
+.hd .badge{background:var(--navy);border-radius:6px;padding:6px 12px;text-align:center;color:#fff}
+.hd .badge b{color:var(--goldl);font-size:9px;letter-spacing:.05em;display:block}
+.hd .badge span{font-size:10px;font-weight:700}
+.rule{height:2px;background:var(--gold);margin:0 12mm}
+/* footer */
+.ft{margin-top:auto;background:var(--navy);color:#fff;padding:7px 12mm;display:flex;justify-content:space-between;align-items:center}
+.ft .n{font-size:9px;font-weight:700}
+.ft .e{font-size:8px;color:var(--goldl)}
+.ft .p{font-size:9px;font-weight:700;color:var(--goldl)}
+/* type */
+h1.title{font-family:'Playfair Display',serif;font-size:36px;color:var(--navy);font-weight:800;line-height:1.02}
+.sub{color:var(--orange);font-weight:700;font-size:15px;margin:8px 0 12px}
+p.lead{color:var(--muted);font-size:13px;line-height:1.65;max-width:62%}
+.band{background:var(--navy);border-radius:10px;padding:13px;text-align:center;color:var(--goldl);font-weight:700;font-size:16px;letter-spacing:.04em;margin:8px 0}
+/* cards */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:1fr 1fr 1fr}
+.card{background:var(--light);border:1px solid var(--line);border-radius:11px;padding:15px}
+.card h3{font-size:13.5px;color:var(--navy);margin-bottom:6px}
+.card p{font-size:11.5px;color:var(--muted);line-height:1.55}
+.num{width:27px;height:27px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+ul.tick{list-style:none}
+ul.tick li{font-size:11.5px;color:var(--ink);padding:3.5px 0 3.5px 17px;position:relative;line-height:1.45}
+ul.tick li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+ul.check li{list-style:none;font-size:12.5px;color:var(--ink);padding:5.5px 0 5.5px 23px;position:relative}
+ul.check li::before{content:"\2713";position:absolute;left:0;top:3px;width:16px;height:16px;background:var(--gold);color:#fff;border-radius:50%;font-size:10px;text-align:center;line-height:16px;font-weight:700}
+.imground{border-radius:12px;object-fit:cover}
+/* cover */
+.cover{background:var(--navy);color:#fff}
+.cover .hero{height:355px;position:relative}
+.cover .hero img{width:100%;height:100%;object-fit:cover}
+.cover .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,17,38,.15),rgba(11,30,62,1))}
+.cover .heromark{position:absolute;top:20px;left:0;right:0;text-align:center;z-index:2}
+.cover .cbadge{position:absolute;top:120px;right:24px;background:var(--red);border-radius:8px;padding:8px 14px;text-align:center;z-index:2}
+.cover .cbadge b{font-size:16px;font-weight:800;display:block}
+.cover .cbadge span{font-size:7px;color:var(--goldl);font-weight:700}
+.cbody{padding:0 12mm;margin-top:-10px}
+.persona{border:1px solid #284873;border-radius:9px;padding:10px 8px;text-align:center;background:var(--navy2)}
+.mono-white .nx{color:#fff}
+/* prices table */
+table.prices{width:100%;border-collapse:collapse;border:2px solid var(--navy);border-radius:8px;overflow:hidden}
+table.prices th{background:var(--navy);color:var(--goldl);font-size:13px;padding:14px;letter-spacing:.05em}
+table.prices td{padding:16px 14px;font-size:15px;border-top:1px solid var(--line)}
+table.prices tr:nth-child(even) td{background:var(--light)}
+.price{color:var(--orange);font-weight:800;font-family:'Playfair Display',serif}
+.tax{color:var(--muted);font-size:10.5px}
+.pill{display:inline-block;background:var(--goldl);color:var(--navy);font-size:10px;font-weight:700;padding:4px 11px;border-radius:20px}
+.notebox{background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:16px}
+.notebox h4{font-size:12.5px;color:var(--navy);margin-bottom:8px}
+.excl li{list-style:none;font-size:11.5px;padding:4.5px 0 4.5px 20px;position:relative;color:var(--ink)}
+.excl li::before{content:"\2715";position:absolute;left:0;color:var(--red);font-weight:700;font-size:12px}
+.hlbar{background:var(--navy);border-radius:10px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;color:#fff}
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff}
+  .page{margin:0;box-shadow:none;page-break-after:always;min-height:297mm}
+  .toolbar{display:none}
+}
+.toolbar{position:fixed;top:10px;right:10px;background:#fff;border-radius:8px;padding:8px 12px;box-shadow:0 4px 16px rgba(0,0,0,.2);font-size:12px;z-index:99}
+.toolbar b{color:var(--blue)}
+/* premium cover elements */
+.goldframe{position:absolute;top:6mm;left:6mm;right:6mm;bottom:6mm;border:1.4px solid rgba(233,178,74,.55);border-radius:8px;pointer-events:none;z-index:5}
+.corner{position:absolute;width:30px;height:30px;z-index:6}
+.corner.tl{top:6mm;left:6mm;border-top:3px solid var(--goldl);border-left:3px solid var(--goldl)}
+.corner.tr{top:6mm;right:6mm;border-top:3px solid var(--goldl);border-right:3px solid var(--goldl)}
+.corner.bl{bottom:6mm;left:6mm;border-bottom:3px solid var(--goldl);border-left:3px solid var(--goldl)}
+.corner.br{bottom:6mm;right:6mm;border-bottom:3px solid var(--goldl);border-right:3px solid var(--goldl)}
+.seal{width:98px;height:98px;border-radius:50%;border:3px solid var(--goldl);background:rgba(11,30,62,.72);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 0 6px rgba(233,178,74,.18)}
+.vrow{display:flex;justify-content:space-between;gap:6px}
+.vic{display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;flex:1}
+.vic .ci{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--goldl),var(--gold));display:flex;align-items:center;justify-content:center}
+.vic .ci svg{width:21px;height:21px;stroke:#0B1E3E;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vic span{font-size:8.5px;color:#DCE7F5;font-weight:600;line-height:1.25}
+.pcard{border-radius:12px;padding:14px 8px;text-align:center;background:var(--navy2);border-top:3px solid var(--goldl)}
+.gribbon{display:flex;align-items:center;gap:12px;justify-content:center;margin:6px 0}
+.gribbon .ln{height:1.5px;flex:1;background:linear-gradient(90deg,transparent,var(--goldl))}
+.gribbon .ln.r{background:linear-gradient(90deg,var(--goldl),transparent)}
+.contactcard{border:2px solid var(--goldl);border-radius:16px;padding:22px;text-align:center;background:rgba(19,49,95,.55)}
+.pill-icon{width:34px;height:34px;border-radius:50%;background:var(--goldl);display:inline-flex;align-items:center;justify-content:center;margin:0 4px}
+.pill-icon svg{width:17px;height:17px;stroke:#0B1E3E;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+<div class="toolbar">To save as PDF: <b>Cmd/Ctrl + P</b> &rarr; Destination <b>Save as PDF</b> &rarr; Margins <b>None</b></div>
+
+<!-- ===================== PAGE 1 COVER ===================== -->
+<section class="page cover" style="position:relative">
+  <div class="goldframe"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+  <div class="hero" style="height:315px">
+    <img src="assets/images/canton-tower.jpg" alt="Guangzhou">
+    <div class="heromark" style="top:28px">
+      <div style="display:inline-block;background:#fff;border-radius:14px;padding:14px 26px;box-shadow:0 10px 28px rgba(0,0,0,.3)">
+        <img src="assets/logo.svg" alt="Nexera Sourcing" style="height:56px;display:block">
+      </div>
+      <div style="font-size:9px;letter-spacing:.26em;color:#fff;margin-top:12px;font-weight:700">EXPLORE . SOURCE . CONNECT . SCALE</div>
+    </div>
+    <div class="seal" style="position:absolute;top:150px;right:34px;z-index:3">
+      <div class="serif" style="font-size:24px;font-weight:900;color:var(--goldl);line-height:1">140<span style="font-size:12px">TH</span></div>
+      <div style="font-size:6.5px;letter-spacing:.12em;color:#fff;font-weight:700;margin-top:2px">CANTON FAIR</div>
+      <div style="width:34px;height:1px;background:var(--goldl);margin:4px 0"></div>
+      <div style="font-size:8px;font-weight:800;color:var(--goldl)">2026</div>
+    </div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:14px 13mm 0;position:relative;z-index:2">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div style="width:6px;align-self:stretch;background:linear-gradient(180deg,var(--goldl),var(--gold));border-radius:3px;margin-top:4px;min-height:110px"></div>
+      <div>
+        <div class="serif" style="font-size:34px;color:var(--goldl);font-weight:900;line-height:1">140TH</div>
+        <div class="serif" style="font-size:52px;color:#fff;font-weight:900;line-height:.98;letter-spacing:.005em">CANTON FAIR</div>
+        <div class="serif" style="font-size:52px;font-weight:900;line-height:1;margin-bottom:12px"><span style="color:#fff">CHINA </span><span style="color:var(--goldl)">2026</span></div>
+        <div style="background:linear-gradient(90deg,var(--blue),#26379c);border-radius:6px;padding:8px 14px;display:inline-block;font-size:11px;font-weight:800;letter-spacing:.02em;color:#fff">THE WORLD'S LARGEST SOURCING &amp; MANUFACTURING ECOSYSTEM</div>
+      </div>
+    </div>
+    <p style="color:#CFE0F0;font-size:12.5px;font-weight:500;line-height:1.55;max-width:88%">A premium business delegation for Indian entrepreneurs and future leaders. <b style="color:#fff">Not just a trip. A business transformation journey.</b></p>
+    <div class="grid g3" style="gap:10px">
+      <div class="pcard"><div class="serif" style="font-size:20px;color:var(--goldl);font-weight:900">LION</div><div style="font-size:8px;color:#C9D6E8;margin-top:2px">For MSME business owners</div><div style="font-size:9px;color:#fff;font-weight:800;margin-top:4px">Expand. Source. Grow.</div></div>
+      <div class="pcard" style="border-top-color:#E86FB0"><div class="serif" style="font-size:20px;color:#E86FB0;font-weight:900">PINC</div><div style="font-size:8px;color:#C9D6E8;margin-top:2px">For women entrepreneurs</div><div style="font-size:9px;color:#fff;font-weight:800;margin-top:4px">Empower. Connect. Lead.</div></div>
+      <div class="pcard" style="border-top-color:#5AA8FF"><div class="serif" style="font-size:20px;color:#5AA8FF;font-weight:900">FALCON</div><div style="font-size:8px;color:#C9D6E8;margin-top:2px">For youth and startups</div><div style="font-size:9px;color:#fff;font-weight:800;margin-top:4px">Learn. Innovate. Launch.</div></div>
+    </div>
+    <div class="gribbon"><span class="ln"></span><span style="color:var(--goldl);font-weight:800;font-size:11px;letter-spacing:.14em;white-space:nowrap">WHAT YOU GAIN</span><span class="ln r"></span></div>
+    <div class="vrow" style="padding-bottom:2px">
+      <div class="vic"><div class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><span>Global networking</span></div>
+      <div class="vic"><div class="ci"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 4V9l6 4V6l6 3v12z"/><path d="M3 21h18"/></svg></div><span>Direct manufacturers</span></div>
+      <div class="vic"><div class="ci"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20v-5"/><path d="M3 20h19"/></svg></div><span>Latest products</span></div>
+      <div class="vic"><div class="ci"><svg viewBox="0 0 24 24"><path d="M4 16l5-5 4 4 7-8"/><path d="M17 7h4v4"/></svg></div><span>Business growth</span></div>
+      <div class="vic"><div class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/><path d="M3.5 9h17M3.5 15h17"/></svg></div><span>Global exposure</span></div>
+      <div class="vic"><div class="ci"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v8l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v8"/></svg></div><span>Sourcing &amp; import</span></div>
+    </div>
+  </div>
+  <div style="background:var(--navy2);border-top:2px solid var(--goldl);padding:11px 13mm;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2">
+    <div style="display:flex;align-items:center;gap:12px"><div style="font-size:8px;color:var(--goldl);font-weight:800;letter-spacing:.1em">ORGANISED<br>BY</div><div style="background:#fff;border-radius:8px;padding:6px 12px"><img src="assets/logo.svg" alt="Nexera Sourcing" style="height:26px;display:block"></div></div>
+    <div style="text-align:right;font-size:8.5px;font-weight:800"><div style="color:#fff">CONNECTING INDIAN ENTREPRENEURS</div><div style="color:var(--goldl)">WITH GLOBAL OPPORTUNITIES</div></div>
+  </div>
+  <div style="background:var(--navy);text-align:center;padding:10px;position:relative;z-index:2">
+    <div style="font-size:11px;color:#fff;font-weight:800;letter-spacing:.02em">+91 7746 050190&nbsp;&nbsp;|&nbsp;&nbsp;+91 8823 050190&nbsp;&nbsp;|&nbsp;&nbsp;+91 8964 050190</div>
+    <div style="font-size:9px;color:var(--goldl);font-weight:600;margin-top:2px">Contact@nexerasourcing.com&nbsp;&nbsp;|&nbsp;&nbsp;nexerasourcingandexim.com</div>
+  </div>
+</section>
+
+<!-- ===================== PAGE 2 WHY ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px">
+      <div style="flex:1">
+        <h1 class="title">WHY NEXERA SOURCING</h1>
+        <div class="sub">We do not organise trips. We create business opportunities.</div>
+        <p style="color:var(--muted);font-size:10.5px;line-height:1.6">Nexera Sourcing is a dedicated business delegation platform that connects Indian entrepreneurs with global manufacturers, suppliers and opportunities. Our purpose is to empower Indian businesses to source smarter, connect globally and scale with confidence.</p>
+      </div>
+      <img class="imground" src="assets/images/guangzhou-skyline.jpg" style="width:190px;height:120px" alt="Guangzhou">
+    </div>
+    <div class="band">WHAT WE HELP YOU ACHIEVE</div>
+    <div class="grid g3">
+      <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span class="num">1</span><h3>Discover new products</h3></div><p>Explore innovative products across multiple industries.</p></div>
+      <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span class="num">2</span><h3>Connect with makers</h3></div><p>Meet verified manufacturers and build long term partnerships.</p></div>
+      <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span class="num">3</span><h3>Grow your business</h3></div><p>Find better pricing, new markets and profitable growth.</p></div>
+      <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span class="num">4</span><h3>Global exposure</h3></div><p>Gain international exposure and learn global practices.</p></div>
+      <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span class="num">5</span><h3>Source smarter</h3></div><p>Compare, negotiate and source quality direct from factories.</p></div>
+      <div class="card"><div style="display:flex;gap:8px;align-items:center;margin-bottom:5px"><span class="num">6</span><h3>Build networks</h3></div><p>Network with importers, traders and industry leaders.</p></div>
+    </div>
+    <div style="background:var(--navy);border-radius:12px;padding:16px;margin:14px 0;display:flex;justify-content:space-around;text-align:center">
+      <div><div class="serif" style="font-size:24px;color:var(--goldl);font-weight:800">500+</div><div style="font-size:8px;color:#CFE0F0">Business delegates</div></div>
+      <div><div class="serif" style="font-size:24px;color:var(--goldl);font-weight:800">1000+</div><div style="font-size:8px;color:#CFE0F0">Verified suppliers</div></div>
+      <div><div class="serif" style="font-size:24px;color:var(--goldl);font-weight:800">20+</div><div style="font-size:8px;color:#CFE0F0">Industry categories</div></div>
+      <div><div class="serif" style="font-size:24px;color:var(--goldl);font-weight:800">100%</div><div style="font-size:8px;color:#CFE0F0">Transparent support</div></div>
+    </div>
+    <div class="grid g2" style="gap:20px">
+      <div><h3 style="color:var(--navy);font-size:13px;margin-bottom:6px">OUR VISION</h3><p style="color:var(--muted);font-size:10px;line-height:1.6">To become India's most trusted business delegation and global sourcing platform, where every Indian entrepreneur grows beyond borders.</p></div>
+      <div><h3 style="color:var(--navy);font-size:13px;margin-bottom:6px">OUR VALUES</h3>
+        <ul class="check" style="font-size:9px"><li><b>Trust.</b> Transparency and strong relationships</li><li><b>Commitment.</b> Dedicated to your growth</li><li><b>Knowledge.</b> We bridge the gaps that help decisions</li><li><b>Impact.</b> Real business impact and long term value</li><li><b>Collaboration.</b> We grow together with our partners</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">2</div></div>
+</section>
+
+<!-- ===================== PAGE 3 PERSONAS ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">WHO IS THIS FOR</h1>
+    <div class="sub">A delegation designed around your journey.</div>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px">
+      <div style="background:linear-gradient(135deg,var(--blue),var(--navy));border-radius:12px;padding:16px;color:#fff;display:flex;gap:18px;align-items:center"><div style="min-width:120px"><div class="serif" style="font-size:26px;font-weight:800">LION</div><div style="font-size:9px;color:#EAF0FA;font-weight:700">Expand. Source. Grow.</div></div><p style="font-size:11px;line-height:1.5">For MSME and business owners. Meet verified manufacturers, cut sourcing costs and scale your business globally.</p></div>
+      <div style="background:linear-gradient(135deg,var(--pink),#6B1F52);border-radius:12px;padding:16px;color:#fff;display:flex;gap:18px;align-items:center"><div style="min-width:120px"><div class="serif" style="font-size:26px;font-weight:800">PINC</div><div style="font-size:9px;color:#f6e2ef;font-weight:700">Empower. Connect. Lead.</div></div><p style="font-size:11px;line-height:1.5">For women entrepreneurs. Join India's women founder delegation and build global sourcing partnerships.</p></div>
+      <div style="background:linear-gradient(135deg,var(--teal),#0B3D3A);border-radius:12px;padding:16px;color:#fff;display:flex;gap:18px;align-items:center"><div style="min-width:120px"><div class="serif" style="font-size:26px;font-weight:800">FALCON</div><div style="font-size:9px;color:#d7f2ec;font-weight:700">Learn. Innovate. Launch.</div></div><p style="font-size:11px;line-height:1.5">For youth, students and startups. Get a global sourcing edge before your competitors do.</p></div>
+    </div>
+    <div class="band">WHY SOURCE AT THE CANTON FAIR</div>
+    <div class="grid g2">
+      <div class="card" style="background:var(--cream)"><h3>Wide range of quality products</h3><p>Access thousands of innovative products under one roof.</p></div>
+      <div class="card" style="background:var(--cream)"><h3>Connect with trusted suppliers</h3><p>Meet verified manufacturers and export ready partners.</p></div>
+      <div class="card" style="background:var(--cream)"><h3>Global business opportunities</h3><p>Expand your product range and grow your business worldwide.</p></div>
+      <div class="card" style="background:var(--cream)"><h3>Competitive pricing and value</h3><p>Source quality products at competitive prices for higher profits.</p></div>
+    </div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">3</div></div>
+</section>
+
+<!-- ===================== PHASE PAGES 4-6 ===================== -->
+<!--PHASES-->
+
+<!-- ===================== PAGE 7 ITINERARY ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title" style="font-size:26px">7 DAYS TOUR ITINERARY</h1>
+    <div style="background:var(--navy);border-radius:5px;padding:6px;text-align:center;color:var(--goldl);font-size:9px;font-weight:700;margin:6px 0 10px">HONG KONG / CHINA  ·  BUSINESS SOURCING &amp; TRADE EXPERIENCE</div>
+    <div id="itin" style="display:flex;flex-direction:column;gap:6px"></div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">7</div></div>
+</section>
+
+<!-- ===================== PAGE 8 PACKAGE ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">BUSINESS DELEGATION PACKAGE</h1>
+    <p style="color:var(--muted);font-size:10.5px;margin:8px 0 14px">We make your Canton Fair journey seamless, efficient and successful with complete support for your business delegation.</p>
+    <div class="grid g2" style="gap:14px">
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div style="background:var(--navy);color:var(--goldl);text-align:center;padding:10px;font-weight:700;font-size:11px">BUSINESS DELEGATION SUPPORT</div>
+        <ul class="check" style="padding:16px"><li>Hotel accommodation</li><li>Airport transfers</li><li>Canton Fair registration</li><li>Visa assistance</li><li>Daily transfers</li><li>Networking dinner</li><li>Business delegate kit</li><li>Local coordination</li><li>Interpreter support</li></ul>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div style="background:var(--blue);color:#fff;text-align:center;padding:10px;font-weight:700;font-size:11px">OPTIONAL SUPPORT</div>
+        <ul class="check" style="padding:16px"><li>Factory visits</li><li>Supplier verification</li><li>Product sourcing</li><li>Import guidance</li><li>Business matchmaking</li><li>Extended stay options</li><li>Group flight coordination</li></ul>
+      </div>
+    </div>
+    <div style="background:var(--navy);border-radius:12px;padding:16px;margin-top:16px;text-align:center;color:#fff">
+      <div style="font-weight:700;font-size:12px;margin-bottom:8px">WE TAKE CARE OF EVERYTHING. YOU FOCUS ON WHAT MATTERS.</div>
+      <div style="display:flex;justify-content:space-around;color:var(--goldl);font-size:9px;font-weight:700"><span>Explore Opportunities</span><span>Scale Your Business</span><span>Source Smart</span><span>Connect Globally</span></div>
+    </div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">8</div></div>
+</section>
+
+<!-- ===================== PAGE 9 PRICES ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">2026 PACKAGE PRICES</h1>
+    <div class="sub">Per person on double sharing basis.</div>
+    <table class="prices">
+      <tr><th style="text-align:center;width:26%">DURATION</th><th style="text-align:left">PACKAGE PRICE</th></tr>
+      <tr><td style="text-align:center;font-weight:700;color:var(--navy)">6N / 7D</td><td><span class="price" style="font-size:19px">&#8377;85,000</span> <span class="tax">+ 5% GST + 2% TCS + Airfare</span></td></tr>
+      <tr><td style="text-align:center;font-weight:700;color:var(--navy)">8N / 9D</td><td><span class="price" style="font-size:19px">&#8377;1,10,000</span> <span class="tax">+ 5% GST + 2% TCS + Airfare</span></td></tr>
+      <tr><td style="text-align:center;font-weight:700;color:var(--navy)">10N / 11D</td><td><span class="price" style="font-size:19px">&#8377;1,30,000</span> <span class="tax">+ 5% GST + 2% TCS + Airfare</span></td></tr>
+      <tr><td style="text-align:center;font-weight:700;color:var(--navy)">12N / 13D</td><td><span class="price" style="font-size:19px">&#8377;1,55,000</span> <span class="tax">+ 5% GST + 2% TCS + Airfare</span></td></tr>
+      <tr><td style="text-align:center;font-weight:700;color:var(--navy)">18N / 19D</td><td><span class="price" style="font-size:19px">&#8377;2,35,000</span> <span class="tax">+ 5% GST + 2% TCS + Airfare</span></td></tr>
+    </table>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="notebox"><h4>ADDITIONAL CHARGES</h4><div style="font-size:9.5px;color:var(--ink)">Single occupancy supplement</div><div class="price" style="font-size:13px">&#8377;5,000 <span style="font-size:9px;color:var(--muted);font-weight:400">per night extra</span></div></div>
+      <div class="notebox"><h4>ADDITIONAL STAY</h4><div class="price" style="font-size:13px">&#8377;12,000 <span style="font-size:9px;color:var(--muted);font-weight:400">per night extra</span></div><div style="font-size:9px;color:var(--muted)">Includes hotel, breakfast and dinner</div></div>
+    </div>
+    <div class="band" style="margin:16px 0 10px">EXCLUSIONS</div>
+    <div class="grid g2">
+      <ul class="excl"><li>International and domestic airfare</li><li>GST, TCS and other government taxes</li><li>Lunch and personal meals unless mentioned</li><li>Any optional tours, activities or services</li></ul>
+      <ul class="excl"><li>Personal expenses such as laundry, shopping, mini bar</li><li>Expenses from flight delays or cancellations</li><li>Anything not mentioned under package inclusions</li></ul>
+    </div>
+    <div class="hlbar" style="margin-top:16px">
+      <div><div style="color:var(--goldl);font-weight:700;font-size:10px">PACKAGE PRICE  6N / 7D</div><div style="font-size:9px;color:#CFE0F0">1 Night Hong Kong + 5 Nights China  OR  6 Nights China</div></div>
+      <div style="text-align:right"><div class="serif" style="font-size:18px;font-weight:800">&#8377;85,000 per person</div><div style="font-size:8.5px;color:var(--goldl)">double sharing  ·  plus 5% GST + 2% TCS + Airfare</div></div>
+    </div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">9</div></div>
+</section>
+
+<!-- ===================== PAGE 10 FLIGHTS ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">FLIGHT SCHEDULE</h1>
+    <div class="sub">Canton Fair tours through Hong Kong  ·  Plan A and Plan B</div>
+    <div class="grid g3" style="margin-top:8px">
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div style="background:var(--navy);color:var(--goldl);text-align:center;padding:9px;font-weight:700;font-size:11px">PHASE 1</div>
+        <div style="padding:12px"><ul class="check" style="font-size:9px"><li>13th to 19th Oct (6N/7D)</li></ul><p style="font-size:8px;color:var(--muted);padding-left:20px;line-height:1.5">Arrival 13th Oct before 2:00 PM. Departure 19th Oct, book after 3:00 PM.</p><ul class="check" style="font-size:9px;margin-top:8px"><li>14th to 20th Oct (6N/7D)</li></ul><p style="font-size:8px;color:var(--muted);padding-left:20px;line-height:1.5">Arrival 14th Oct before 10:00 AM. Departure 20th Oct, any time.</p></div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div style="background:var(--navy);color:var(--goldl);text-align:center;padding:9px;font-weight:700;font-size:11px">PHASE 2</div>
+        <div style="padding:12px"><ul class="check" style="font-size:9px"><li>21st to 27th Oct (6N/7D)</li></ul><p style="font-size:8px;color:var(--muted);padding-left:20px;line-height:1.5">Arrival 21st Oct before 2:00 PM. Departure 27th Oct, book after 3:00 PM.</p><ul class="check" style="font-size:9px;margin-top:8px"><li>22nd to 28th Oct (6N/7D)</li></ul><p style="font-size:8px;color:var(--muted);padding-left:20px;line-height:1.5">Arrival 22nd Oct before 2:00 PM. Departure 28th Oct, any time.</p></div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+        <div style="background:var(--navy);color:var(--goldl);text-align:center;padding:9px;font-weight:700;font-size:11px">PHASE 3</div>
+        <div style="padding:12px"><ul class="check" style="font-size:9px"><li>29th Oct to 4th Nov (6N/7D)</li></ul><p style="font-size:8px;color:var(--muted);padding-left:20px;line-height:1.5">Arrival 29th Oct before 2:00 PM. Departure 4th Nov, book after 3:00 PM.</p><ul class="check" style="font-size:9px;margin-top:8px"><li>30th Oct to 5th Nov (6N/7D)</li></ul><p style="font-size:8px;color:var(--muted);padding-left:20px;line-height:1.5">Arrival 30th Oct before 10:00 AM. Departure 5th Nov, any time.</p></div>
+      </div>
+    </div>
+    <div class="notebox" style="margin-top:16px">
+      <h4>IMPORTANT NOTES</h4>
+      <ul class="tick" style="font-size:9.5px"><li>For flight bookings and exact timings, kindly contact our flight support team.</li><li>Please double check all flight timings before booking. We can book flights on your behalf to avoid mistakes.</li><li>On the last day of the Canton Fair, the group will reach Hong Kong by 11:00 AM.</li><li>Under Plan B, on the arrival date the group will leave Hong Kong for China by 1:00 PM maximum.</li></ul>
+    </div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">10</div></div>
+</section>
+
+<!-- ===================== PAGE 11 VISA ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">CHINA VISA OPTIONS</h1>
+    <div class="sub">For Canton Fair visitors from India.</div>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="num" style="background:var(--navy)">01</span><h3>STICKER VISA</h3></div><span class="pill">For direct China</span><ul class="check" style="font-size:9px;margin-top:8px"><li>Stay up to 30 days in China</li><li>Processing time 30 to 40 days</li><li>Allows a longer stay</li><li>Higher rejection risk in fair season, up to 40 to 50%</li><li>Best for individual travellers</li></ul></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="num" style="background:var(--blue)">02</span><h3>GROUP PAPER VISA</h3></div><span class="pill" style="background:var(--teal);color:#fff">Recommended</span><ul class="check" style="font-size:9px;margin-top:8px"><li>Stay up to 30 days in China</li><li>High approval success rate</li><li>Minimum 4 travellers</li><li>All travellers enter and exit China together</li><li>Most recommended for groups</li></ul></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="num" style="background:var(--navy)">03</span><h3>HONG KONG TO CHINA</h3></div><span class="pill">Most popular</span><ul class="check" style="font-size:9px;margin-top:8px"><li>144 hour transit route</li><li>Enter Hong Kong using PAR or applicable visa</li><li>Enter China through a 144 hour group visa</li><li>Stay up to 6 days in China</li><li>Perfect for short business visits</li></ul></div>
+    </div>
+    <div style="background:var(--navy);border-radius:12px;padding:16px;margin-top:16px;color:#fff">
+      <div style="color:var(--goldl);font-weight:700;font-size:11px;margin-bottom:10px">OUR RECOMMENDATION</div>
+      <div style="display:flex;justify-content:space-between;gap:16px">
+        <div><div style="font-size:10px;font-weight:700">Staying up to 6 days</div><div style="font-size:9px;color:#CFE0F0">Hong Kong + China, 144 hour visa</div></div>
+        <div><div style="font-size:10px;font-weight:700">Group of 4 or more</div><div style="font-size:9px;color:#CFE0F0">China group paper visa</div></div>
+        <div><div style="font-size:10px;font-weight:700">Individual traveller</div><div style="font-size:9px;color:#CFE0F0">China sticker visa, subject to approval</div></div>
+      </div>
+    </div>
+    <p style="font-size:9px;color:var(--muted);margin-top:12px">Note: A China sticker visa can be processed for an additional charge. If it is rejected, a 144 hour group visa may apply with an additional charge.</p>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">11</div></div>
+</section>
+
+<!-- ===================== PAGE 12 BOOKING ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">BOOKING INFORMATION</h1>
+    <div class="sub">Required details and payment process.</div>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="num">1</span><h3>Full name and contact</h3></div><ul class="tick"><li>Name</li><li>Mobile number</li><li>Email ID</li><li>Travel history, last 3 years</li></ul></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="num">2</span><h3>Documents required</h3></div><ul class="tick"><li>PAN card soft copy</li><li>Passport soft copy, front and back</li><li>Passport size photograph, white background</li><li>Clear scanned copies only</li></ul></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="num">3</span><h3>Business details</h3></div><ul class="tick"><li>GST number, if available</li><li>Visiting card or business name and address</li></ul></div>
+    </div>
+    <div style="background:var(--navy);border-radius:12px;padding:14px;margin-top:14px;color:#fff">
+      <div style="text-align:center;color:var(--goldl);font-weight:700;font-size:11px;margin-bottom:10px">BOOKING AND PAYMENT PROCESS</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;text-align:center">
+        <div><div style="color:var(--goldl);font-weight:700;font-size:9px">STEP 1</div><div style="font-size:8px;color:#CFE0F0;margin-top:3px">Submit required documents</div></div>
+        <div><div style="color:var(--goldl);font-weight:700;font-size:9px">STEP 2</div><div style="font-size:8px;color:#CFE0F0;margin-top:3px">Pay token of &#8377;10,000 per person</div></div>
+        <div><div style="color:var(--goldl);font-weight:700;font-size:9px">STEP 3</div><div style="font-size:8px;color:#CFE0F0;margin-top:3px">We process your Hong Kong visa</div></div>
+        <div><div style="color:var(--goldl);font-weight:700;font-size:9px">STEP 4</div><div style="font-size:8px;color:#CFE0F0;margin-top:3px">Pay &#8377;40,000 per person after visa</div></div>
+        <div><div style="color:var(--goldl);font-weight:700;font-size:9px">STEP 5</div><div style="font-size:8px;color:#CFE0F0;margin-top:3px">Book flight, balance before travel</div></div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="notebox"><h4>PAYMENT TERMS</h4><div style="font-size:9.5px;font-weight:700;color:var(--ink)">Booking 15 Aug to 15 Sept</div><div style="font-size:9px;color:var(--muted);margin-bottom:6px">100% payment within 7 days of booking</div><div style="font-size:9.5px;font-weight:700;color:var(--ink)">Booking after 15 Sept</div><div style="font-size:9px;color:var(--muted)">100% payment within 2 days</div></div>
+      <div class="notebox"><h4>IMPORTANT NOTES</h4><ul class="check" style="font-size:9px"><li>Token amount is non refundable in all cases.</li><li>Non payment of dues leads to automatic cancellation.</li><li>All bookings subject to availability and operations.</li></ul></div>
+    </div>
+    <div style="background:var(--goldl);border-radius:12px;padding:14px 18px;margin-top:16px;display:flex;justify-content:space-between;align-items:center">
+      <div><div style="font-weight:800;font-size:13px;color:var(--navy)">EARLY BIRD</div><div style="font-size:10px;font-weight:700;color:#5A3A00">100% payment before 15 August 2026</div></div>
+      <div class="serif" style="font-size:16px;font-weight:800;color:var(--navy)">FLAT 5% DISCOUNT APPLICABLE</div>
+    </div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">12</div></div>
+</section>
+
+<!-- ===================== PAGE 13 TERMS ===================== -->
+<section class="page">
+  <div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div>
+  <div class="rule"></div>
+  <div class="pad grow">
+    <h1 class="title">TERMS AND CONDITIONS</h1>
+    <ul class="tick" style="font-size:9px;margin-top:10px;column-count:1">
+      <li>100% payment is required to confirm the booking.</li>
+      <li>All payments are non refundable once the booking is confirmed.</li>
+      <li>Travellers are solely responsible for obtaining valid passports, visas and other travel documents.</li>
+      <li>Visa approval is at the sole discretion of the respective embassy or consulate and is not guaranteed by Nexera Sourcing.</li>
+      <li>No refunds will be provided for visa rejection, no shows, missed flights, unused services or early departures.</li>
+      <li>Standard hotel check in time is 3:00 PM and check out time is 11:00 AM.</li>
+      <li>Early check in and late check out are subject to hotel availability and additional charges.</li>
+      <li>Airport transfers, sightseeing tours, expo transfers and local transport operate on fixed schedules. Missed transfers due to late arrival will not be rescheduled or refunded.</li>
+      <li>Sightseeing schedules and tour programs are fixed. Missed activities due to personal delays will not be refunded.</li>
+      <li>Hotels may be changed to a similar or higher category due to operational requirements.</li>
+      <li>Rooms, categories and special requests are subject to hotel availability at the time of check in.</li>
+      <li>The itinerary, sightseeing sequence, transportation, hotels and activities are subject to change without prior notice.</li>
+      <li>Nexera Sourcing reserves the absolute right to alter, amend or modify any component to ensure smooth operations.</li>
+      <li>Travellers must follow all instructions provided by the tour manager. Non compliance may result in removal from the tour without refund.</li>
+      <li>Nexera Sourcing shall not be liable for flight delays, cancellations, immigration issues, denied entry, deportation, customs delays or actions of any government authority.</li>
+      <li>The company shall not be responsible for losses arising from natural disasters, strikes, political unrest, war, pandemics, weather disruptions or any force majeure event.</li>
+      <li>No refund, compensation or reimbursement shall be payable for changes or disruptions caused by such events.</li>
+      <li>Food quality, hotel services, airline services and other third party services are beyond the direct control of Nexera Sourcing.</li>
+      <li>Travellers are strongly advised to purchase comprehensive travel insurance before departure.</li>
+    </ul>
+    <div style="background:var(--navy);border-radius:8px;padding:12px;margin-top:14px;text-align:center;color:var(--goldl);font-size:9px;font-weight:700">By confirming your booking, you acknowledge that you have read, understood and agreed to all terms and conditions of Nexera Sourcing.</div>
+  </div>
+  <div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">13</div></div>
+</section>
+
+<!-- ===================== PAGE 14 BACK ===================== -->
+<section class="page cover" style="position:relative">
+  <div class="goldframe"></div><div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+  <div class="hero" style="height:300px">
+    <img src="assets/images/canton-tower-night.jpg" alt="Guangzhou night">
+    <div class="heromark" style="top:30px"><div style="display:inline-block;background:#fff;border-radius:13px;padding:12px 24px;box-shadow:0 10px 28px rgba(0,0,0,.3)"><img src="assets/logo.svg" alt="Nexera Sourcing" style="height:48px;display:block"></div></div>
+    <div class="seal" style="position:absolute;top:150px;left:50%;transform:translateX(-50%);width:78px;height:78px;z-index:3"><div class="serif" style="font-size:18px;font-weight:900;color:var(--goldl)">140<span style="font-size:10px">TH</span></div><div style="font-size:6px;color:#fff;font-weight:700;letter-spacing:.1em">CANTON 2026</div></div>
+  </div>
+  <div style="flex:1;text-align:center;padding:6px 15mm 0;display:flex;flex-direction:column;justify-content:space-between;color:#fff;position:relative;z-index:2">
+    <div>
+      <div class="serif" style="font-size:30px;font-weight:900;line-height:1.05">YOUR SUPPLIERS ARE WAITING</div>
+      <div class="serif" style="font-size:32px;font-weight:900;color:var(--goldl);line-height:1.05">IN GUANGZHOU.</div>
+      <div style="width:70px;height:3px;background:var(--goldl);margin:12px auto;border-radius:2px"></div>
+      <p style="color:#CFE0F0;font-size:12.5px;font-weight:500;line-height:1.6;max-width:540px;margin:0 auto">Book your 140th Canton Fair 2026 business delegation today and come back with verified suppliers, better prices and real business partnerships.</p>
+    </div>
+    <div class="contactcard" style="max-width:470px;margin:0 auto;width:100%">
+      <div style="color:var(--goldl);font-weight:800;font-size:14px;letter-spacing:.12em;margin-bottom:14px">CONTACT US TODAY</div>
+      <div style="display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:6px">
+        <span class="pill-icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <span class="serif" style="font-size:22px;font-weight:900;color:#fff">+91 7746 050190</span>
+      </div>
+      <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:14px">+91 8823 050190&nbsp;&nbsp;&nbsp;&nbsp;+91 8964 050190</div>
+      <div style="display:flex;justify-content:center;gap:24px;font-size:11px;margin-bottom:16px">
+        <span style="color:#CFE0F0"><b style="color:var(--goldl)">Email</b>&nbsp; Contact@nexerasourcing.com</span>
+        <span style="color:#CFE0F0"><b style="color:var(--goldl)">Web</b>&nbsp; nexerasourcingandexim.com</span>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--goldl),var(--gold));color:var(--navy);font-weight:800;font-size:12px;padding:12px;border-radius:24px;letter-spacing:.03em">BOOK YOUR FREE CONSULTATION</div>
+    </div>
+    <div class="gribbon" style="margin:2px 0"><span class="ln"></span><span style="color:var(--goldl);font-weight:800;font-size:11px;letter-spacing:.22em;white-space:nowrap">EXPLORE . SOURCE . CONNECT . SCALE</span><span class="ln r"></span></div>
+  </div>
+  <div style="text-align:center;padding:14px;color:#fff;position:relative;z-index:2">
+    <div class="serif" style="font-weight:900;font-size:16px">NEXERA <span style="color:var(--teal)">SOURCING</span></div>
+    <div style="font-size:9.5px;color:var(--goldl);margin-top:2px">Connecting Indian entrepreneurs with global opportunities.</div>
+    <div style="font-size:11px;font-weight:800;margin-top:8px;color:#fff">Not just a trip. A business transformation journey.</div>
+  </div>
+</section>
+
+<script>
+// Phase pages (kept in JS to keep markup DRY)
+var phases=[
+ {n:1,dates:"15th to 19th Oct 2026",img:"guangzhou-skyline.jpg",color:"var(--goldl)",
+  intro:"Discover a wide range of high quality products and innovative solutions across 8 key industries at Phase 1 of the Canton Fair.",
+  ind:[["Electronics",["Consumer electronics","Home appliances","Power supplies","Audio and video"]],["Industrial Automation",["Automation equipment","Robotics systems","Control systems","Sensors"]],["Solar and Renewable",["Solar PV products","Energy storage","Wind energy","Charging solutions"]],["Machinery",["General machinery","Processing machinery","Agricultural machinery","Machine tools"]],["Construction Equipment",["Construction machinery","Building materials","Hardware and tools","Engineering vehicles"]],["Automotive",["Auto parts","Vehicle accessories","New energy vehicles","Maintenance equipment"]],["Electrical Products",["Power equipment","Low voltage electricals","Cables and wires","Lighting solutions"]],["Smart Manufacturing",["Industrial internet","Smart factory solutions","Digital manufacturing","Data management"]]]},
+ {n:2,dates:"23rd to 27th Oct 2026",img:"pearl-river.jpg",color:"#E86FB0",
+  intro:"Phase 2 showcases home, lifestyle and decoration products across a wide range of quality manufacturers.",
+  ind:[["Building and Decoration",["Building materials","Sanitary and bathroom","Doors and windows","Paints and coatings"]],["Furniture",["Living room furniture","Bedroom furniture","Office furniture","Custom furniture"]],["Kitchen and Tableware",["Cookware and bakeware","Tableware","Kitchen tools","Glassware"]],["Daily Use Ceramics",["Ceramic tiles","Sanitary ware","Art ceramics","Household ceramics"]],["Household Items",["Plastic products","Cleaning supplies","Storage solutions","Daily necessities"]],["Clocks and Watches",["Wall clocks","Watches","Optical instruments","Timepieces"]],["Gifts and Festival",["Promotional gifts","Festival items","Corporate gifts","Luxury gift items"]],["Home Decorations",["Wall decor","Decorative accessories","Vases and planters","Candles and holders"]],["Glass and Rattan",["Glass artware","Gardening products","Woven and rattan","Iron and stone decor"]]]},
+ {n:3,dates:"31st Oct to 4th Nov 2026",img:"zhujiang-newtown.jpg",color:"var(--goldl)",
+  intro:"Phase 3 brings together quality suppliers across textiles, health, sports and lifestyle products.",
+  ind:[["Textiles",["Yarn and fibres","Fabrics and lace","Functional textiles","Home textiles"]],["Garments",["Men's wear","Women's wear","Children's wear","Sportswear"]],["Healthcare",["Health and personal care","Wellness products","Rehabilitation products","Hygiene and protection"]],["Medical Devices",["Diagnostic equipment","Surgical instruments","Patient care","Lab equipment"]],["Sports Goods",["Fitness equipment","Outdoor recreation","Camping and travel gear","Sportswear and footwear"]],["Office Supplies",["Paper products","Writing instruments","Filing and storage","Desk accessories"]],["Baby Products",["Baby care products","Maternity products","Baby gear","Feeding and nursing"]],["Shoes and Bags",["Footwear","Handbags","Luggage","Travel accessories"]],["Personal Care",["Beauty products","Personal care","Grooming","Wellness accessories"]]]}
+];
+var phaseHTML=phases.map(function(ph){
+  var cards=ph.ind.map(function(it,i){
+    return '<div class="card" style="padding:0;overflow:hidden"><div style="background:var(--navy);color:#fff;padding:9px 12px;font-size:11.5px;font-weight:700">'+(i+1)+'. '+it[0]+'</div><ul class="tick" style="padding:10px 12px">'+it[1].map(function(x){return '<li style="font-size:10.5px">'+x+'</li>'}).join('')+'</ul></div>';
+  }).join('');
+  return '<section class="page"><div class="hd"><div class="lg"><img src="assets/logo.svg" alt="Nexera"><div class="tag">EXPLORE . SOURCE . CONNECT . SCALE</div></div><div class="badge"><b>140TH CANTON FAIR</b><span>CHINA 2026</span></div></div><div class="rule"></div><div class="pad grow"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px"><div style="flex:1"><span class="pill" style="background:'+ph.color+';font-size:9px">PHASE '+ph.n+'  ('+ph.dates+')</span><h1 class="title" style="margin-top:8px">PHASE '+ph.n+' INDUSTRIES</h1><p style="color:var(--muted);font-size:10px;line-height:1.5;margin-top:6px;max-width:95%">'+ph.intro+'</p></div><img class="imground" src="assets/images/'+ph.img+'" style="width:180px;height:100px" alt="Guangzhou"></div><div class="grid g3" style="margin-top:12px">'+cards+'</div><div style="background:var(--navy);border-radius:12px;padding:14px;margin-top:14px"><div style="text-align:center;color:var(--goldl);font-weight:700;font-size:11px;margin-bottom:8px">WHY SOURCE IN PHASE '+ph.n+'</div><div style="display:flex;justify-content:space-around;color:#fff;font-size:8.5px;font-weight:600;text-align:center"><span>Wide range of quality products</span><span>Connect with trusted suppliers</span><span>Global business opportunities</span><span>Grow your business faster</span></div></div></div><div class="ft"><div class="n">+91 7746 050190 | +91 8823 050190 | +91 8964 050190</div><div class="p">'+(3+ph.n)+'</div></div></section>';
+}).join('');
+document.body.querySelector('section:nth-of-type(3)').insertAdjacentHTML('afterend', phaseHTML);
+
+// Itinerary
+var days=[["DAY 1","Arrival in Hong Kong or China",["Arrival at airport per package selection","Airport pickup at fixed reporting time","Hotel check in by 3:00 PM","Evening group get together dinner"],"zhujiang-newtown.jpg"],
+["DAY 2","City tour, transfer and local exploration",["Breakfast at hotel","Hong Kong or China city tour","Transfer from Hong Kong to China","Evening group dinner"],"pearl-river.jpg"],
+["DAY 3","Canton Fair visit, day 1",["Breakfast at hotel","Full day visit to Canton Fair","Product sourcing and supplier meetings","Evening group dinner"],"canton-tower.jpg"],
+["DAY 4","Canton Fair visit, day 2",["Continued Canton Fair visits","Networking with exporters and manufacturers","Evening group dinner"],"guangzhou-skyline.jpg"],
+["DAY 5","Half day city tour",["Half day city tour and shopping","Free time for business discussions","Evening group dinner"],"canton-tower-night.jpg"],
+["DAY 6","Canton Fair visit, final day",["Final visit to Canton Fair","Last negotiations and order finalisation","Evening group dinner"],"zhujiang-newtown.jpg"],
+["DAY 7","Departure",["Breakfast at hotel","Airport drop as per fixed timing","Hong Kong to China transfer 6:00 AM","China airport departure 11:00 AM only"],"pearl-river.jpg"]];
+document.getElementById('itin').innerHTML=days.map(function(d){
+  return '<div style="display:flex;height:112px;background:var(--light);border:1px solid var(--line);border-radius:11px;overflow:hidden"><div style="background:var(--navy);color:var(--goldl);min-width:62px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px">'+d[0]+'</div><div style="flex:1;padding:9px 14px;display:flex;flex-direction:column;justify-content:center"><div style="font-weight:700;color:var(--navy);font-size:12.5px;margin-bottom:3px">'+d[1]+'</div><ul class="tick itin-list">'+d[2].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div><img src="assets/images/'+d[3]+'" style="width:120px;height:112px;object-fit:cover" alt=""></div>';
+}).join('');
+</script>
+</body>
+</html>
