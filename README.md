@@ -14,7 +14,7 @@ No build step — pure HTML/CSS/JS. Deploy anywhere (Netlify, Vercel, Cloudflare
 /locations/index.html       → City hub (local SEO)
 /locations/*.html           → Per-city landing pages
 /sitemap.xml, /robots.txt   → Indexing
-/assets/logo.svg            → Brand logo
+/assets/logo.png            → Brand logo
 ```
 
 ## ⚙️ 3 setup steps before going live
