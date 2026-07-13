@@ -183,6 +183,28 @@ footer a:hover{color:var(--gold)}
 .modal-close:hover{background:rgba(255,255,255,.35)}
 .modal .field{margin-bottom:11px}
 
+/* Compare table */
+.compare{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.compare .crow{display:grid;grid-template-columns:1.4fr 1fr 1fr}
+.compare .crow>div{padding:16px 18px;border-bottom:1px solid var(--line);font-size:.95rem}
+.compare .crow:last-child>div{border-bottom:0}
+.compare .chead>div{background:var(--navy);color:#fff;font-weight:700;font-size:1rem;border-bottom:0}
+.compare .chead .us{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--navy)}
+.compare .feat{font-weight:600;color:var(--navy);background:var(--bg2)}
+.compare .us{background:#fbf7ee;font-weight:600;color:var(--navy)}
+.compare .yes{color:#0d7a4f;font-weight:700}
+.compare .no{color:#b3261e}
+.compare .yes svg,.compare .no svg{width:18px;height:18px;vertical-align:-4px;margin-right:4px;stroke-width:2.4;fill:none}
+.compare .yes svg{stroke:#0d7a4f}.compare .no svg{stroke:#b3261e}
+
+/* Brochure band */
+.brochure{background:linear-gradient(120deg,var(--navy),#123a63);border-radius:24px;padding:44px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.brochure h2{color:#fff;font-size:1.9rem}
+.brochure p{color:#cfe0f0;margin-top:8px;max-width:440px}
+.brochure .bcover{width:150px;border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.4);border:2px solid rgba(233,178,74,.5)}
+.dl-btn{display:inline-flex;align-items:center;gap:8px}
+.dl-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
+
 /* Scroll progress */
 .scrollbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--teal));z-index:200;transition:width .1s}
 
@@ -305,4 +327,8 @@ footer a:hover{color:var(--gold)}
   .mobilecta{display:flex}
   .wa{bottom:76px}
   body{padding-bottom:64px}
+  .compare .crow>div{padding:12px 10px;font-size:.82rem}
+  .compare .chead>div{font-size:.82rem}
+  .brochure{padding:28px 22px;text-align:center;justify-content:center}
+  .brochure .bcover{width:120px}
 }

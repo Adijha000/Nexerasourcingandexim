@@ -40,7 +40,7 @@
     try{
       var res=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
       var out=await res.json();
-      if(out.success==='true'||out.success===true){msg.classList.add('ok');msg.textContent='Thank you! Our specialist will call you within 24 hours.';form.reset();if(window.gtag)gtag('event','generate_lead',{event_label:'popup'});setTimeout(close,2200);}
+      if(out.success==='true'||out.success===true){msg.classList.add('ok');msg.innerHTML='Thank you! Our specialist will call you within 24 hours.<br><a href="/assets/Nexera-Canton-Fair-2026-Brochure.pdf" download class="btn btn-primary btn-block" style="margin-top:12px">Download the Canton Fair brochure</a>';form.reset();btn.style.display='none';if(window.gtag)gtag('event','generate_lead',{event_label:'popup'});}
       else throw new Error();
     }catch(err){msg.classList.add('err');msg.textContent='Something went wrong. Please WhatsApp us at +91 7746 050190.';}
     btn.disabled=false;btn.textContent='Request my free consultation';
