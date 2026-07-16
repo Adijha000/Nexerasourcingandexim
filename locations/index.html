@@ -40,7 +40,7 @@ document.getElementById('ham').onclick=function(){document.getElementById('navLi
 window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',scrollY>40)});
 document.getElementById('header').classList.add('scrolled');
 var cities=[["Surat","Textiles, diamonds, machinery","canton-fair-tour-from-surat.html"],["Ahmedabad","Textiles, chemicals, pharma",""],["Rajkot","Engineering, auto parts, machine tools",""],["Morbi","Ceramics, tiles, sanitaryware",""],["Delhi NCR","Electronics, lighting, hardware, gifts",""],["Mumbai","Electronics, general imports",""],["Ludhiana","Hosiery, bicycle & auto parts, tools",""],["Jaipur","Gems, gifts, handicrafts",""],["Bengaluru","Electronics, machinery, startups",""],["Hyderabad","General trade, electronics",""],["Kolkata","Electronics, general imports",""],["Coimbatore","Textile machinery, motors, pumps",""]];
-var html='';cities.forEach(function(c){var live=c[2]!=='';html+='<a class="post-card" href="'+(live?c[2]:'../#book')+'"><div class="body"><span class="tagpill">'+(live?'Available':'Enquire')+'</span><h3>Canton Fair from '+c[0]+'</h3><p>'+c[1]+'</p><span class="rd">'+(live?'View details →':'Book a call →')+'</span></div></a>';});
+var html='';cities.forEach(function(c){var live=c[2]!=='';html+='<a class="post-card" href="'+(live?'/locations/'+c[2]:'../#book')+'"><div class="body"><span class="tagpill">'+(live?'Available':'Enquire')+'</span><h3>Canton Fair from '+c[0]+'</h3><p>'+c[1]+'</p><span class="rd">'+(live?'View details →':'Book a call →')+'</span></div></a>';});
 document.getElementById('cityList').innerHTML=html;
 </script>
 </body>
