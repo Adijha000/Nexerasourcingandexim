@@ -42,6 +42,44 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
+  // Lazy-load Calendly widget script only when the booking section is scrolled near
+  var bookSection=document.getElementById('book');
+  if(bookSection){
+    var calIo=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var s=document.createElement('script');
+          s.src='https://assets.calendly.com/assets/external/widget.js';
+          s.async=true;
+          document.body.appendChild(s);
+          calIo.unobserve(bookSection);
+        }
+      });
+    },{rootMargin:'300px'});
+    calIo.observe(bookSection);
+  }
+
+  // Lazy-load muted autoplay video only when scrolled near (keeps initial page load light)
+  var videoWrap=document.getElementById('videoWrap');
+  if(videoWrap){
+    var vio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var id=videoWrap.getAttribute('data-yt');
+          var ifr=document.createElement('iframe');
+          ifr.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&loop=1&playlist='+id+'&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3';
+          ifr.setAttribute('allow','autoplay; encrypted-media');
+          ifr.setAttribute('title','Canton Fair Guangzhou walkthrough video');
+          ifr.loading='lazy';
+          videoWrap.appendChild(ifr);
+          document.getElementById('videoPoster').style.opacity='0';
+          vio.unobserve(videoWrap);
+        }
+      });
+    },{rootMargin:'200px'});
+    vio.observe(videoWrap);
+  }
+
   // FAQ accordion
   document.querySelectorAll('.qa button').forEach(function(b){
     b.addEventListener('click',function(){
