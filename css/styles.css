@@ -274,12 +274,12 @@ header.scrolled .hamburger span{background:var(--navy)}
 .price-sub{color:#c3d2ea;font-size:.92rem;margin-top:8px}
 .price-badge{background:var(--red);color:#fff;font-weight:800;font-size:1.1rem;padding:12px 22px;border-radius:14px;white-space:nowrap;transform:rotate(-3deg);box-shadow:0 10px 24px rgba(193,39,45,.4)}
 .price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
-.price-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 14px;text-align:center;transition:.3s}
-.price-card:hover{background:rgba(255,255,255,.09);transform:translateY(-4px);border-color:var(--gold)}
-.pc-dur{color:#cfdcf0;font-weight:700;font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:10px}
-.pc-old{color:#7f93b6;text-decoration:line-through;text-decoration-color:var(--red);font-size:.95rem;font-family:var(--serif)}
-.pc-new{color:#fff;font-family:var(--serif);font-weight:800;font-size:1.5rem;margin:2px 0 8px}
-.pc-save{display:inline-block;background:rgba(233,178,74,.16);color:var(--gold);font-weight:700;font-size:.76rem;padding:4px 10px;border-radius:20px}
+.price-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:16px;padding:20px 14px;text-align:center;transition:.3s}
+.price-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:var(--shadow-lg)}
+.pc-dur{color:var(--muted);font-weight:700;font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:10px}
+.pc-old{color:#9aa7bd;text-decoration:line-through;text-decoration-color:var(--red);font-size:.95rem;font-family:var(--serif)}
+.pc-new{color:var(--navy);font-family:var(--serif);font-weight:800;font-size:1.5rem;margin:2px 0 8px}
+.pc-save{display:inline-block;background:rgba(233,178,74,.16);color:var(--gold2);font-weight:700;font-size:.76rem;padding:4px 10px;border-radius:20px}
 .price-note{color:var(--muted);font-size:.85rem;margin-top:16px}
 @media(max-width:820px){.price-grid{grid-template-columns:repeat(2,1fr)}.price-hero-row{flex-direction:column;align-items:flex-start}}
 
