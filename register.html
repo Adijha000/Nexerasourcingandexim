@@ -203,6 +203,7 @@
 
 <a class="wa" href="https://wa.me/917746050190?text=Hi%20Nexera%2C%20I%20need%20help%20with%20the%20Canton%20Fair%20registration%20form" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm5.8 14.2c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.8-4.5-4-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.6-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg></a>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 document.getElementById('ham').onclick=function(){document.getElementById('navLinks').classList.toggle('open')};
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.08});
@@ -210,21 +211,65 @@ document.querySelectorAll('.reveal').forEach(function(el){el.style.opacity='0';e
 var styleTag=document.createElement('style');styleTag.textContent='.reveal.in{opacity:1!important;transform:none!important}';document.head.appendChild(styleTag);
 
 var form=document.getElementById('regForm'),msg=document.getElementById('regFormMsg'),btn=document.getElementById('regSubmitBtn');
+
+var SUPABASE_URL='https://byxylgasxyscobbyjoaz.supabase.co';
+var SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5eHlsZ2FzeHlzY29iYnlqb2F6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3MDYzNjQsImV4cCI6MjEwMDI4MjM2NH0.HBERm0mcWCfHOa8f074s6QRaVTKmiEmFiwbX4KLziMc';
+var supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+
+var TEXT_FIELDS=['Fair_Phase','Package','Full_Name','Company_Name','Designation','Business_Category','GST_No','Passport_Number','Nationality','Passport_Issue_Date','Passport_Expiry_Date','Mobile_Number','Alternate_Mobile','Email','Website','Office_Address','City','State','PIN_Code','Sourcing_Interest','Purchase_Budget','Previous_China_Visit','Import_Experience','Emergency_Contact_Name','Emergency_Contact_Relationship','Emergency_Contact_Mobile','Amount_Paid','Payment_Mode','Transaction_UTR','Payment_Date','Signature','Declaration_Date'];
+var FIELD_TO_COLUMN={Fair_Phase:'fair_phase',Package:'package',Full_Name:'full_name',Company_Name:'company_name',Designation:'designation',Business_Category:'business_category',GST_No:'gst_no',Passport_Number:'passport_number',Nationality:'nationality',Passport_Issue_Date:'passport_issue_date',Passport_Expiry_Date:'passport_expiry_date',Mobile_Number:'mobile_number',Alternate_Mobile:'alternate_mobile',Email:'email',Website:'website',Office_Address:'office_address',City:'city',State:'state',PIN_Code:'pin_code',Sourcing_Interest:'sourcing_interest',Purchase_Budget:'purchase_budget',Previous_China_Visit:'previous_china_visit',Import_Experience:'import_experience',Emergency_Contact_Name:'emergency_contact_name',Emergency_Contact_Relationship:'emergency_contact_relationship',Emergency_Contact_Mobile:'emergency_contact_mobile',Amount_Paid:'amount_paid',Payment_Mode:'payment_mode',Transaction_UTR:'transaction_utr',Payment_Date:'payment_date',Signature:'signature',Declaration_Date:'declaration_date'};
+
 form.addEventListener('submit',async function(e){
   e.preventDefault();
   msg.className='form-msg';btn.disabled=true;btn.textContent='Submitting...';
+  var submissionId=(crypto.randomUUID?crypto.randomUUID():String(Date.now())+'-'+Math.random().toString(16).slice(2));
   try{
-    var res=await fetch(form.action,{method:'POST',body:new FormData(form)});
-    var out=await res.json().catch(function(){return {success:'true'};});
-    if(out.success==='true'||out.success===true){
-      msg.classList.add('ok');
-      msg.innerHTML='Thank you. Your registration has been received. Our team will reach out to you shortly. If any document upload was too large to send, please email it directly to nexerasourcing01@gmail.com.';
-      form.reset();
-      if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'registration_form'});
-    }else{throw new Error();}
+    var fd=new FormData(form);
+    var row={declaration_accepted: fd.get('Declaration_Accepted')==='Yes'};
+    TEXT_FIELDS.forEach(function(f){row[FIELD_TO_COLUMN[f]]=fd.get(f)||null;});
+
+    var fileInputs=[].slice.call(form.querySelectorAll('input[type="file"]'));
+    var documents={};
+    for(var i=0;i<fileInputs.length;i++){
+      var input=fileInputs[i];
+      if(!input.files||!input.files.length)continue;
+      var paths=[];
+      for(var j=0;j<input.files.length;j++){
+        var file=input.files[j];
+        var safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+        var path=submissionId+'/'+input.name+'-'+j+'-'+safeName;
+        var upload=await supabaseClient.storage.from('registration-documents').upload(path,file,{upsert:false});
+        if(upload.error){throw new Error('Upload failed for '+input.name+': '+upload.error.message);}
+        paths.push(path);
+      }
+      documents[input.name]=paths;
+    }
+    row.documents=documents;
+    row.id=submissionId;
+
+    var insertRes=await supabaseClient.from('registrations').insert([row]);
+    if(insertRes.error){throw new Error('Could not save registration: '+insertRes.error.message);}
+
+    // Lightweight text-only email ping (no attachments, documents live in Supabase)
+    try{
+      await fetch('https://formsubmit.co/ajax/nexerasourcing01@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({
+        _subject:'New Canton Fair 2026 Registration: '+(fd.get('Full_Name')||'Unnamed'),
+        Full_Name:fd.get('Full_Name')||'',
+        Mobile_Number:fd.get('Mobile_Number')||'',
+        Email:fd.get('Email')||'',
+        Fair_Phase:fd.get('Fair_Phase')||'',
+        Documents_Uploaded:Object.keys(documents).join(', ')||'None',
+        Note:'Full details and documents are saved in Supabase, table registrations, id '+submissionId
+      })});
+    }catch(emailErr){ /* non-fatal, registration already saved */ }
+
+    msg.classList.add('ok');
+    msg.innerHTML='Thank you. Your registration and documents have been received securely. Our team will reach out to you shortly.';
+    form.reset();
+    if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'registration_form'});
   }catch(err){
     msg.classList.add('err');
-    msg.textContent='Something went wrong, possibly due to large file attachments. Please try again with smaller files, or WhatsApp/email your documents to +91 7746 050190 / nexerasourcing01@gmail.com.';
+    msg.textContent='Something went wrong: '+(err&&err.message?err.message:'please try again')+'. You can also WhatsApp or email your documents to +91 7746 050190 / nexerasourcing01@gmail.com.';
   }
   btn.disabled=false;btn.textContent='Submit registration';
 });
