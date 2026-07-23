@@ -400,18 +400,6 @@ footer a:hover{color:var(--gold)}
 /* Scroll progress */
 .scrollbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--teal));z-index:200;transition:width .1s}
 
-/* Countdown */
-.countdown{background:linear-gradient(120deg,var(--navy),#123a63);color:#fff;padding:26px 0}
-.countdown .cwrap{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;text-align:center}
-.countdown .lead-t{font-family:var(--serif);font-size:1.35rem;font-weight:800;color:#fff}
-.countdown .lead-t b{color:var(--gold)}
-.cd-timer{display:flex;gap:12px}
-.cd-box{background:rgba(255,255,255,.08);border:1px solid rgba(233,178,74,.35);border-radius:12px;padding:10px 14px;min-width:66px}
-.cd-box b{display:block;font-family:var(--serif);font-size:2rem;color:var(--gold);line-height:1;font-weight:800}
-.cd-box span{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#c9d6e8}
-.cd-cta{background:var(--gold);color:var(--navy);padding:12px 24px;border-radius:50px;font-weight:800;white-space:nowrap}
-.cd-cta:hover{transform:translateY(-2px)}
-
 /* Stat counters */
 .statsband{background:var(--navy);color:#fff;padding:56px 0}
 .statsband .row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
@@ -511,9 +499,6 @@ footer a:hover{color:var(--gold)}
   .tgrid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
-  .countdown .cwrap{gap:16px}
-  .cd-box{min-width:56px;padding:8px 10px}
-  .cd-box b{font-size:1.5rem}
   .statsband .st b{font-size:2.2rem}
   .catgrid{grid-template-columns:1fr 1fr}
   .mobilecta{display:flex}
