@@ -108,6 +108,30 @@
     });
   }
 
+  // Brochure download form -> FormSubmit.co, then trigger the actual PDF download
+  var bForm=document.getElementById('brochureForm'),bMsg=document.getElementById('brochureMsg'),bBtn=document.getElementById('dlBrochureBtn');
+  if(bForm){
+    bForm.addEventListener('submit',async function(e){
+      e.preventDefault();
+      bMsg.className='form-msg';bBtn.disabled=true;bBtn.textContent='Preparing your download...';
+      try{
+        var res=await fetch('https://formsubmit.co/ajax/nexerasourcing01@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(bForm)))});
+        var out=await res.json().catch(function(){return {success:'true'};});
+        if(out.success==='true'||out.success===true){
+          bMsg.classList.add('ok');
+          bMsg.innerHTML='Thank you! Your download is starting. Our team may also reach out with a personalised sourcing plan.';
+          var a=document.createElement('a');a.href='assets/Nexera-Canton-Fair-2026-Brochure.pdf';a.download='';document.body.appendChild(a);a.click();a.remove();
+          bForm.reset();
+          if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'brochure_download'});
+        }else{throw new Error();}
+      }catch(err){
+        bMsg.classList.add('err');
+        bMsg.textContent='Something went wrong. Please WhatsApp us at +91 7746 050190 and we will send the brochure directly.';
+      }
+      bBtn.disabled=false;bBtn.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Get the brochure (PDF)';
+    });
+  }
+
   // Scroll progress bar
   var sb=document.getElementById('scrollbar');
   if(sb){window.addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;sb.style.width=p+'%';});}

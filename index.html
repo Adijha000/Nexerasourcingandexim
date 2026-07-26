@@ -410,7 +410,8 @@
         <span class="pc-save">Save 8%</span>
       </div>
     </div>
-    <p class="center price-note reveal">All packages per person, double sharing, plus 5% GST + 2% TCS + airfare. Prices valid for a limited time.</p>
+    <p class="center price-note reveal">All packages per person, double sharing, plus 5% GST + 2% TCS + airfare.</p>
+    <p class="center price-note reveal" style="color:var(--orange);font-weight:700">China group visa processing takes 30 to 40 days. Apply now to be ready for Phase 1 on 15 October 2026.</p>
   </div>
 </section>
 
@@ -422,7 +423,15 @@
         <span class="eyebrow" style="color:var(--gold)">Free download</span>
         <h2>Get the full Canton Fair 2026 brochure</h2>
         <p>Packages, prices, phase wise industries, the day by day itinerary, visa options and everything included. 14 pages, ready to share with your team.</p>
-        <a href="assets/Nexera-Canton-Fair-2026-Brochure.pdf" download class="btn btn-primary btn-lg dl-btn" id="dlBrochure"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Download brochure (PDF)</a>
+        <form id="brochureForm" novalidate class="brochure-form">
+          <input type="text" name="Name" required placeholder="Your name" aria-label="Your name">
+          <input type="tel" name="Phone" required placeholder="WhatsApp number" aria-label="WhatsApp number">
+          <input type="hidden" name="_subject" value="Brochure Download Request">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" style="display:none">
+          <button type="submit" class="btn btn-primary btn-lg dl-btn" id="dlBrochureBtn"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>Get the brochure (PDF)</button>
+        </form>
+        <div class="form-msg" id="brochureMsg" style="color:#cfe0f0"></div>
       </div>
     </div>
   </div>
