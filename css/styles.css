@@ -281,6 +281,11 @@ header.scrolled .hamburger span{background:var(--navy)}
 .pc-new{color:var(--navy);font-family:var(--serif);font-weight:800;font-size:1.5rem;margin:2px 0 8px}
 .pc-save{display:inline-block;background:rgba(233,178,74,.16);color:var(--gold2);font-weight:700;font-size:.76rem;padding:4px 10px;border-radius:20px}
 .price-note{color:var(--muted);font-size:.85rem;margin-top:16px}
+.urgency-banner{display:flex;gap:16px;align-items:flex-start;background:#fff7ed;border:1.5px solid var(--orange);border-radius:16px;padding:22px 26px;margin-top:22px}
+.urgency-banner .urgency-ico{width:28px;height:28px;flex-shrink:0;stroke:var(--orange);fill:none;stroke-width:2}
+.urgency-banner p{color:var(--ink);font-size:1rem;line-height:1.5}
+.urgency-banner b{color:var(--orange)}
+@media(max-width:600px){.urgency-banner{flex-direction:column;align-items:flex-start}}
 @media(max-width:820px){.price-grid{grid-template-columns:repeat(2,1fr)}.price-hero-row{flex-direction:column;align-items:flex-start}}
 
 /* FAQ */
