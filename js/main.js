@@ -1,5 +1,18 @@
 /* Nexera Canton Fair — interactions */
 (function(){
+  // Gated brochure: file lives in a private Supabase bucket, only reachable via a
+  // short-lived signed URL generated after a lead form is actually submitted.
+  var SUPABASE_URL='https://byxylgasxyscobbyjoaz.supabase.co';
+  var SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ5eHlsZ2FzeHlzY29iYnlqb2F6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3MDYzNjQsImV4cCI6MjEwMDI4MjM2NH0.HBERm0mcWCfHOa8f074s6QRaVTKmiEmFiwbX4KLziMc';
+  var supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+  async function getBrochureSignedUrl(){
+    if(!supabaseClient) throw new Error('brochure service unavailable');
+    var res = await supabaseClient.storage.from('brochure-gated').createSignedUrl('Nexera-Canton-Fair-2026-Brochure.pdf', 300);
+    if(res.error || !res.data) throw new Error('could not prepare brochure link');
+    return res.data.signedUrl;
+  }
+  window.__nxGetBrochureUrl = getBrochureSignedUrl;
+
   // Inject the Guangzhou skyline hero scene (vector — always renders)
   var scene = document.getElementById('heroScene');
   if(scene){
@@ -99,9 +112,11 @@
         var res=await fetch('https://formsubmit.co/ajax/nexerasourcing01@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
         var out=await res.json();
         if(out.success==='true'||out.success===true){msg.classList.add('ok');
-          msg.innerHTML='Thank you! Our sourcing specialist will call you within 24 hours.<br><a href="/assets/Nexera-Canton-Fair-2026-Brochure.pdf" download class="btn btn-primary btn-block" style="margin-top:12px">Download the Canton Fair brochure</a>';
+          msg.innerHTML='Thank you! Our sourcing specialist will call you within 24 hours.<br><a href="#" id="leadBrochureLink" class="btn btn-primary btn-block" style="margin-top:12px">Download the Canton Fair brochure</a>';
           form.reset();
           if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'canton_fair'});
+          var lbLink=document.getElementById('leadBrochureLink');
+          if(lbLink)lbLink.addEventListener('click',async function(e){e.preventDefault();lbLink.textContent='Preparing...';try{var url=await getBrochureSignedUrl();window.location.href=url;lbLink.textContent='Download the Canton Fair brochure';}catch(err){lbLink.textContent='Could not load, WhatsApp us instead';}});
         }else{throw new Error();}
       }catch(err){msg.classList.add('err');msg.textContent='Something went wrong. Please WhatsApp us at +91 7746 050190.';}
       btn.disabled=false;btn.textContent='Request my free consultation';
@@ -120,7 +135,8 @@
         if(out.success==='true'||out.success===true){
           bMsg.classList.add('ok');
           bMsg.innerHTML='Thank you! Your download is starting. Our team may also reach out with a personalised sourcing plan.';
-          var a=document.createElement('a');a.href='assets/Nexera-Canton-Fair-2026-Brochure.pdf';a.download='';document.body.appendChild(a);a.click();a.remove();
+          var url=await getBrochureSignedUrl();
+          window.location.href=url;
           bForm.reset();
           if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'brochure_download'});
         }else{throw new Error();}
