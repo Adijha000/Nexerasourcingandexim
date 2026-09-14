@@ -162,8 +162,22 @@
   </div>
 </div>
 
-<section class="section" id="webinar">
+<section class="section webinar-section" id="webinar">
   <div class="container">
+    <div class="shead center reveal">
+      <span class="eyebrow">Free live webinar &middot; Limited seats</span>
+      <h2>Before you book your Canton Fair delegation, <span class="grad-text">join our free live webinar</span></h2>
+      <p>A 2 hour live session on exactly how to source at the 140th Canton Fair, hosted by the Nexera Sourcing team. Open to serious importers and business owners only.</p>
+    </div>
+    <div class="webinar-countdown reveal" id="webinarCountdown">
+      <span>Starts in</span>
+      <div class="cd-units">
+        <div class="cd-unit"><b id="cdDays">00</b><small>Days</small></div>
+        <div class="cd-unit"><b id="cdHours">00</b><small>Hours</small></div>
+        <div class="cd-unit"><b id="cdMins">00</b><small>Mins</small></div>
+        <div class="cd-unit"><b id="cdSecs">00</b><small>Secs</small></div>
+      </div>
+    </div>
     <div class="webinar-card reveal">
       <div class="webinar-cover">
         <span class="webinar-live-badge"><span class="dot"></span> FREE LIVE WEBINAR</span>
@@ -615,5 +629,25 @@
 <script src="js/globe.js"></script>
 <script src="js/main.js"></script>
 <script src="js/popup.js"></script>
+<script>
+(function(){
+  var target = new Date('2026-09-15T15:00:00+05:30').getTime();
+  var el = document.getElementById('webinarCountdown');
+  if(!el) return;
+  var dEl=document.getElementById('cdDays'), hEl=document.getElementById('cdHours'), mEl=document.getElementById('cdMins'), sEl=document.getElementById('cdSecs');
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var diff = target - Date.now();
+    if(diff <= 0){ el.querySelector('span').textContent = 'Live now'; dEl.textContent='00'; hEl.textContent='00'; mEl.textContent='00'; sEl.textContent='00'; return; }
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor((diff%86400000)/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var s = Math.floor((diff%60000)/1000);
+    dEl.textContent=pad(d); hEl.textContent=pad(h); mEl.textContent=pad(m); sEl.textContent=pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
