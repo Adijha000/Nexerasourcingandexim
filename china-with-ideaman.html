@@ -33,10 +33,11 @@
 .im-stats span{color:#b8c8e6;font-size:.85rem}
 
 .im-about{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center}
-.im-photo-card{background:linear-gradient(150deg,var(--navy),var(--blue));border-radius:24px;padding:36px;color:#fff;position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end}
+.im-photo-card{background:linear-gradient(150deg,var(--navy),var(--blue));border-radius:24px;padding:40px 36px;color:#fff;position:relative;overflow:hidden;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .im-photo-card::before{content:'';position:absolute;top:-30%;left:-20%;width:280px;height:280px;background:radial-gradient(circle,rgba(233,178,74,.35),transparent 70%)}
+.im-photo-card .im-avatar{position:relative;z-index:1;width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.25);box-shadow:0 12px 30px rgba(0,0,0,.3);margin-bottom:20px}
 .im-photo-card .ig-handle{position:relative;z-index:1;font-weight:800;font-size:1.3rem}
-.im-photo-card .ig-sub{position:relative;z-index:1;color:#cfe0f0;font-size:.9rem;margin-top:4px}
+.im-photo-card .ig-sub{position:relative;z-index:1;color:#cfe0f0;font-size:.9rem;margin-top:4px;max-width:280px}
 .im-photo-card .ig-btn{position:relative;z-index:1;margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--navy);padding:10px 20px;border-radius:50px;font-weight:700;font-size:.88rem;width:fit-content}
 .im-tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 20px}
 .im-tag{background:var(--bg2);color:var(--navy);font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:50px;border:1px solid var(--line)}
@@ -110,6 +111,7 @@
 <section class="section">
   <div class="container im-about reveal">
     <div class="im-photo-card">
+      <img src="assets/images/ideaman-profile.jpg" alt="Idea Man" class="im-avatar">
       <span class="ig-handle">Idea Man</span>
       <p class="ig-sub">@idea____man &middot; 1M+ followers &middot; Shark Tank India &middot; Serial entrepreneur</p>
     </div>
@@ -167,9 +169,16 @@
         <input type="text" name="_honey" style="display:none">
         <div class="field"><label>Full name*</label><input type="text" name="Full_Name" required placeholder="Your name"></div>
         <div class="field"><label>WhatsApp number*</label><input type="tel" name="WhatsApp_Number" required placeholder="+91 ..."></div>
-        <div class="field"><label>Instagram handle*</label><input type="text" name="Instagram_Handle" required placeholder="@yourhandle"></div>
         <div class="field"><label>City*</label><input type="text" name="City" required placeholder="e.g. Surat, Delhi, Mumbai"></div>
-        <div class="field"><label>What do you do / what do you want to source?*</label><input type="text" name="Business_Or_Sourcing" required placeholder="e.g. import electronics, run a D2C brand"></div>
+        <div class="field"><label>What business are you in?*</label><input type="text" name="Business_Type" required placeholder="e.g. import electronics, run a D2C brand, manufacturing"></div>
+        <div class="field"><label>How serious are you about travelling to the Canton Fair?*</label>
+          <select name="Seriousness" required>
+            <option value="">Select</option>
+            <option>Very serious, I am ready to book if selected</option>
+            <option>Serious, I want to know more details first</option>
+            <option>Exploring the idea, not fully decided yet</option>
+          </select>
+        </div>
         <div class="field"><label>Why should you be picked for this trip?*</label><textarea name="Why_Pick_You" rows="3" required placeholder="Tell us in 2-3 lines"></textarea></div>
         <button type="submit" class="btn btn-primary btn-block btn-lg" id="ideamanSubmitBtn">Submit my application</button>
         <div class="form-msg" id="ideamanFormMsg"></div>
