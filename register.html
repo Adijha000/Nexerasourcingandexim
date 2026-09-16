@@ -30,6 +30,21 @@
 .reg-declare input{margin-top:3px}
 @media(max-width:720px){.reg-grid{grid-template-columns:1fr}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1031408293210705');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1031408293210705&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <header id="header" class="scrolled">
@@ -281,6 +296,7 @@ form.addEventListener('submit',async function(e){
     msg.innerHTML='Thank you. Your registration and documents have been received securely. Our team will reach out to you shortly.';
     form.reset();
     if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'registration_form'});
+    if(window.fbq)fbq('track','CompleteRegistration',{content_name:'canton_fair_registration'});
   }catch(err){
     msg.classList.add('err');
     msg.textContent='Something went wrong: '+(err&&err.message?err.message:'please try again')+'. You can also WhatsApp or email your documents to +91 7746 050190 / nexerasourcing01@gmail.com.';

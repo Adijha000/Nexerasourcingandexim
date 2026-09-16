@@ -1,4 +1,4 @@
-/* Auto-opening inquiry popup — shows within 3 seconds, once per session */
+/* Auto-opening inquiry popup — exit-intent on desktop, scroll-depth on mobile, 20s fallback, once per session */
 (function(){
   if(sessionStorage.getItem('nx_popup'))return;
   var ENDPOINT='https://formsubmit.co/ajax/nexerasourcing01@gmail.com';
@@ -32,7 +32,23 @@
   wrap.addEventListener('click',function(e){if(e.target===wrap)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
 
-  setTimeout(function(){wrap.classList.add('show');sessionStorage.setItem('nx_popup','1');},2500);
+  var shown=false;
+  function show(){
+    if(shown)return;shown=true;
+    wrap.classList.add('show');sessionStorage.setItem('nx_popup','1');
+    document.removeEventListener('mouseout',onMouseOut);
+    window.removeEventListener('scroll',onScroll);
+    clearTimeout(fallbackTimer);
+  }
+  function onMouseOut(e){if(e.clientY<40&&!e.relatedTarget&&!e.toElement)show();}
+  function onScroll(){
+    var scrolled=(window.scrollY||document.documentElement.scrollTop)/(document.documentElement.scrollHeight-window.innerHeight);
+    if(scrolled>=0.6)show();
+  }
+  var isMobile=window.matchMedia('(max-width:768px)').matches||('ontouchstart' in window);
+  if(isMobile){window.addEventListener('scroll',onScroll,{passive:true});}
+  else{document.addEventListener('mouseout',onMouseOut);}
+  var fallbackTimer=setTimeout(show,20000);
 
   var form=wrap.querySelector('#nxPopupForm'),msg=wrap.querySelector('#nxPopupMsg'),btn=wrap.querySelector('#nxPopupBtn');
   form.addEventListener('submit',async function(e){
@@ -40,7 +56,7 @@
     try{
       var res=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
       var out=await res.json();
-      if(out.success==='true'||out.success===true){msg.classList.add('ok');msg.innerHTML='Thank you! Our specialist will call you within 24 hours.<br><a href="/#brochure" class="btn btn-primary btn-block" style="margin-top:12px">Get the Canton Fair brochure</a>';form.reset();btn.style.display='none';if(window.gtag)gtag('event','generate_lead',{event_label:'popup'});}
+      if(out.success==='true'||out.success===true){msg.classList.add('ok');msg.innerHTML='Thank you! Our specialist will call you within 24 hours.<br><a href="/#brochure" class="btn btn-primary btn-block" style="margin-top:12px">Get the Canton Fair brochure</a>';form.reset();btn.style.display='none';if(window.gtag)gtag('event','generate_lead',{event_label:'popup'});if(window.fbq)fbq('track','Lead',{content_name:'popup'});}
       else throw new Error();
     }catch(err){msg.classList.add('err');msg.textContent='Something went wrong. Please WhatsApp us at +91 7746 050190.';}
     btn.disabled=false;btn.textContent='Request my free consultation';

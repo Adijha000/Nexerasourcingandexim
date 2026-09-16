@@ -115,6 +115,7 @@
           msg.innerHTML='Thank you! Our sourcing specialist will call you within 24 hours.<br><a href="#" id="leadBrochureLink" class="btn btn-primary btn-block" style="margin-top:12px">Download the Canton Fair brochure</a>';
           form.reset();
           if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'canton_fair'});
+          if(window.fbq)fbq('track','Lead',{content_name:'homepage_consultation'});
           var lbLink=document.getElementById('leadBrochureLink');
           if(lbLink)lbLink.addEventListener('click',async function(e){e.preventDefault();lbLink.textContent='Preparing...';try{var url=await getBrochureSignedUrl();window.location.href=url;lbLink.textContent='Download the Canton Fair brochure';}catch(err){lbLink.textContent='Could not load, WhatsApp us instead';}});
         }else{throw new Error();}
@@ -139,6 +140,7 @@
           window.location.href=url;
           bForm.reset();
           if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'brochure_download'});
+          if(window.fbq)fbq('track','Lead',{content_name:'brochure_download'});
         }else{throw new Error();}
       }catch(err){
         bMsg.classList.add('err');

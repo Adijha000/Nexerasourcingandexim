@@ -55,6 +55,21 @@
 
 @media(max-width:860px){.im-about{grid-template-columns:1fr}.im-campaign-grid{grid-template-columns:1fr}.im-form-wrap{padding:26px 22px}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1031408293210705');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1031408293210705&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <header id="header" class="scrolled">
@@ -255,6 +270,7 @@ form.addEventListener('submit',async function(e){
     msg.innerHTML='Thank you. Your application has been received. Our team will reach out on WhatsApp if you are shortlisted.';
     form.reset();
     if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'ideaman_campaign'});
+    if(window.fbq)fbq('track','Lead',{content_name:'ideaman_campaign'});
   }catch(err){
     msg.classList.add('err');
     msg.textContent='Something went wrong. Please WhatsApp us directly at +91 7746 050190 to apply.';
