@@ -265,7 +265,8 @@ form.addEventListener('submit',async function(e){
     var payload={};
     fd.forEach(function(v,k){payload[k]=v;});
     var res=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
-    if(!res.ok) throw new Error('Submission failed');
+    var out=await res.json().catch(function(){return null;});
+    if(!res.ok||!out||!(out.success==='true'||out.success===true)) throw new Error((out&&out.message)||'Submission failed');
     msg.classList.add('ok');
     msg.innerHTML='Thank you. Your application has been received. Our team will reach out on WhatsApp if you are shortlisted.';
     form.reset();
@@ -273,7 +274,7 @@ form.addEventListener('submit',async function(e){
     if(window.fbq)fbq('track','Lead',{content_name:'ideaman_campaign'});
   }catch(err){
     msg.classList.add('err');
-    msg.textContent='Something went wrong. Please WhatsApp us directly at +91 7746 050190 to apply.';
+    msg.textContent='Something went wrong, your application was not sent. Please WhatsApp us directly at +91 7746 050190 to apply.';
   }
   btn.disabled=false;btn.textContent='Submit my application';
 });

@@ -189,7 +189,8 @@ form.addEventListener('submit',async function(e){
     var payload={};
     fd.forEach(function(v,k){payload[k]=v;});
     var res=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
-    if(!res.ok) throw new Error('Submission failed');
+    var out=await res.json().catch(function(){return null;});
+    if(!res.ok||!out||!(out.success==='true'||out.success===true)) throw new Error((out&&out.message)||'Submission failed');
     document.getElementById('clGate').style.display='none';
     document.getElementById('clUnlocked').style.display='block';
     window.scrollTo({top:document.getElementById('clUnlocked').offsetTop-100,behavior:'smooth'});
