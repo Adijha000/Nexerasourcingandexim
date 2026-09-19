@@ -53,6 +53,10 @@
 .im-seat-bar{width:100%;height:8px;background:var(--line);border-radius:50px;overflow:hidden}
 .im-seat-fill{height:100%;background:linear-gradient(90deg,var(--gold2),var(--gold));border-radius:50px}
 
+.im-thankyou{text-align:center;padding:20px 10px}
+.im-thankyou-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#128C7E,#25D366);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.im-thankyou h3{font-size:1.4rem;color:var(--navy);margin-bottom:10px}
+.im-thankyou p{color:var(--muted);max-width:440px;margin:0 auto 22px;font-size:.98rem;line-height:1.5}
 @media(max-width:860px){.im-about{grid-template-columns:1fr}.im-campaign-grid{grid-template-columns:1fr}.im-form-wrap{padding:26px 22px}}
 </style>
 <!-- Meta Pixel Code -->
@@ -199,6 +203,14 @@ fbq('track', 'PageView');
         <div class="form-msg" id="ideamanFormMsg"></div>
         <p class="form-note">Selected applicants will be contacted on WhatsApp by the Nexera Sourcing team. No spam, no fees to apply.</p>
       </form>
+      <div id="ideamanThankYou" class="im-thankyou" style="display:none">
+        <div class="im-thankyou-icon">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3>You're in the running!</h3>
+        <p>Your application has been received. Our team will personally reach out to you on WhatsApp if you are shortlisted for this delegation.</p>
+        <a href="https://wa.me/917746050190?text=Hi%20Nexera%2C%20I%20just%20applied%20for%20the%20Idea%20Man%20Canton%20Fair%20campaign" target="_blank" rel="noopener" class="btn" style="background:#128C7E;color:#fff">Message us on WhatsApp</a>
+      </div>
     </div>
   </div>
 </section>
@@ -256,7 +268,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.reveal').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(18px)';el.style.transition='opacity .6s,transform .6s';io.observe(el);});
 var styleTag=document.createElement('style');styleTag.textContent='.reveal.in{opacity:1!important;transform:none!important}';document.head.appendChild(styleTag);
 
-var form=document.getElementById('ideamanForm'),msg=document.getElementById('ideamanFormMsg'),btn=document.getElementById('ideamanSubmitBtn');
+var form=document.getElementById('ideamanForm'),msg=document.getElementById('ideamanFormMsg'),btn=document.getElementById('ideamanSubmitBtn'),thankYou=document.getElementById('ideamanThankYou');
 form.addEventListener('submit',async function(e){
   e.preventDefault();
   msg.className='form-msg';btn.disabled=true;btn.textContent='Submitting...';
@@ -267,11 +279,13 @@ form.addEventListener('submit',async function(e){
     var res=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)});
     var out=await res.json().catch(function(){return null;});
     if(!res.ok||!out||!(out.success==='true'||out.success===true)) throw new Error((out&&out.message)||'Submission failed');
-    msg.classList.add('ok');
-    msg.innerHTML='Thank you. Your application has been received. Our team will reach out on WhatsApp if you are shortlisted.';
     form.reset();
+    form.style.display='none';
+    thankYou.style.display='block';
+    thankYou.scrollIntoView({behavior:'smooth',block:'center'});
     if(window.gtag)gtag('event','generate_lead',{event_category:'form',event_label:'ideaman_campaign'});
     if(window.fbq)fbq('track','Lead',{content_name:'ideaman_campaign'});
+    return;
   }catch(err){
     msg.classList.add('err');
     msg.textContent='Something went wrong, your application was not sent. Please WhatsApp us directly at +91 7746 050190 to apply.';
